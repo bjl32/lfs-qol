@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY changelogs  "https://www.linuxfromscratch.org/blfs">
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<!-- vim: set expandtab: -->
+
+<sect1 id="changelog" xreflabel="Change Log">
+  <?dbhtml filename="changelog.html"?>
+
+
+  <title>Change Log</title>
+
+  <!-- <para>Please note that the Change Log only lists which editor was
+  responsible for putting the changes into SVN; please read the
+  <xref linkend="credits"/> page in Chapter 1 for details on
+  who wrote what.</para> -->
+
+  <para>Current release: &version; &ndash; &releasedate;</para>
+
+  <itemizedlist>
+    <title>Changelog Entries:</title>
+
+<!-- Changelog template
+    <listitem>
+      <para>MMMM DD{nd,st,th}, YYYY</para>
+      <itemizedlist>
+        <listitem>
+          <para>[name] - Newer entry.</para>
+        </listitem>
+        <listitem>
+          <para>[name] - package: ver -&gt; ver. Fixes
+          <ulink url="&lfs-qol-issues;/num">#num</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    -->
+
+    <listitem>
+      <para>May 3rd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - GCC: 14.2.0 -&gt; 15.1.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - CUDA: Get around use of older libxml2 ABI.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 23rd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - tmux: Added. Fixes
+          <ulink url="&lfs-qol-issues;/132">#132</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GLideN64: 575f381 -&gt; 865b121. Fixes
+          <ulink url="&lfs-qol-issues;/123">#123</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - asio: 1-34-0 -&gt; 1-34-2. Fixes
+          <ulink url="&lfs-qol-issues;/124">#124</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - glaze: 5.0.2 -&gt; 5.1.0. Fixes
+          <ulink url="&lfs-qol-issues;/125">#125</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libjuice: 1.5.2 -&gt; 1.6.0. Fixes
+          <ulink url="&lfs-qol-issues;/126">#126</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libdatachannel: 0.21.2 -&gt; 0.22.6. Fixes
+          <ulink url="&lfs-qol-issues;/127">#127</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - nlohmann-json: 3.11.3 -&gt; 3.12.0. Fixes
+          <ulink url="&lfs-qol-issues;/128">#128</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - htop: 3.4.0 -&gt; 3.4.1. Fixes
+          <ulink url="&lfs-qol-issues;/129">#129</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - eza: 0.21.0 -&gt; 0.21.1. Fixes
+          <ulink url="&lfs-qol-issues;/130">#130</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - foot: 1.21.0 -&gt; 1.22.0. Fixes
+          <ulink url="&lfs-qol-issues;/131">#131</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 19th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - PrismLauncher: 9.2 -&gt; 9.4. Fixes
+          <ulink url="&lfs-qol-issues;/119">#119</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 16th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - PrismLauncher: Cover default JDKs and multi-JDK
+          setup.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - hyprlang: 0.6.0 -&gt; 0.6.1. Fixes
+          <ulink url="&lfs-qol-issues;/117">#117</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 15th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - GLM: Removed. Fixes
+          <ulink url="&lfs-qol-issues;/121">#121</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 13th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - eza: Added. Fixes
+          <ulink url="&lfs-qol-issues;/118">#118</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Fastfetch: 2.40.3 -&gt; 2.40.4. Fixes
+          <ulink url="&lfs-qol-issues;/115">#115</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 10th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - xdg-desktop-portal-wlr: Fix build.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - asio; QR-Code-Generator; websocketpp: Added.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libdatachannel: Added.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - xdg-desktop-portal-wlr: Added.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - OBS Studio: Document all dependencies.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 9th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - OBS Studio: Add Browser support.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - uthash; OBS Studio: Added.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - jansson: Added.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 8th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - wbg: Added. Fixes
+          <ulink url="&lfs-qol-issues;/114">#114</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Alacritty: Add configuration information.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - foot; fcft: Added. Fixes
+          <ulink url="&lfs-qol-issues;/113">#113</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - tllist: Added.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 7th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - rpmextract: Added. Fixes
+          <ulink url="&lfs-qol-issues;/108">#108</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - scdoc: Added. Fixes
+          <ulink url="&lfs-qol-issues;/107">#107</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - hyprgraphics: 0.1.2 -> 0.1.3;
+          hyprutils: 0.5.2 -> 0.6.0; hyprland-protocols: 0.6.3 -> 0.6.4.
+          Fixes <ulink url="&lfs-qol-issues;/110">#110</ulink>,
+          <ulink url="&lfs-qol-issues;/111">#111</ulink>, and
+          <ulink url="&lfs-qol-issues;/112">#112</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Fastfetch: 2.40.1 -&gt; 2.40.3. Fixes
+          <ulink url="&lfs-qol-issues;/104">#104</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 5th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Toxikuu] - Alacritty: Added. Fixes
+          <ulink url="&lfs-qol-issues;/90">#90</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 4th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - All: Remove .so suffix from all library filenames.
+          Fixes <ulink url="&lfs-qol-issues;/102">#102</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - hyprland-protocols: 0.6.2 -&gt; 0.6.3;
+          glaze: 5.0.1 -&gt; 5.0.2; fastfetch: 2.39.1 -&gt; 2.40.1. Fixes
+          <ulink url="&lfs-qol-issues;/99">#99</ulink>,
+          <ulink url="&lfs-qol-issues;/100">#100</ulink>, and
+          <ulink url="&lfs-qol-issues;/101">#101</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - OpenJDK: Move to 17 (Security). Fixes
+          <ulink url="&lfs-qol-issues;/103">#103</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 1st, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - wm/wf/*: Added. Fixes
+          <ulink url="&lfs-qol-issues;/98">#98</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Hyprland: 0.48.0 -&gt; 0.48.1. Fixes
+          <ulink url="&lfs-qol-issues;/95">#95</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[seal331] - C-INTERCAL; Befunge; Unlambda: Added. PR
+          <ulink url="&lfs-qol-pull;/97">(#97)</ulink></para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - yajl: Fix build with CMake-4.0.0. Fixes
+          <ulink url="&lfs-qol-issues;/96">#96</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 29th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - CUDA; nv-codec-headers: Added. Fixes
+          <ulink url="&lfs-qol-issues;/94">#94</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 27th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - GNAT: Added.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Updated multiple packages.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 19th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[MymeType] - fastfetch: Added dependency list. Fixes
+          <ulink url="&lfs-qol-issues;/84">#84</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 18th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[MymeType] - fastfetch: Added. PR
+          <ulink url="&lfs-qol-pull;/83">(#83)</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 17th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - hyprutils: 0.5.1 -&gt; 0.5.2;
+          glaze: 4.4.3 -&gt; 5.0.0;
+          aquamarine: 0.7.2 -&gt; 0.8.0. Fixes
+          <ulink url="&lfs-qol-issues;/77">#77</ulink>,
+          <ulink url="&lfs-qol-issues;/78">#78</ulink>, and
+          <ulink url="&lfs-qol-issues;/81">#81</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - *: Rearrange the entire book.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Dolphin: 2412 -&gt; 2503. Fixes
+          <ulink url="&lfs-qol-issues;/76">#76</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - BTOP++: Added.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - htop: Added. Fixes
+          <ulink url="&lfs-qol-issues;/79">#79</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 16th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[MymeType] - neofetch: Added. PR
+          <ulink url="&lfs-qol-pull;/80">(#80)</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 13th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[seal331] - general-utilities/*: Added. PR
+          <ulink url="&lfs-qol-pull;/75">(#75)</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 9th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[seal331] - minicom: 2.9 -&gt; 2.10;
+          heirloom-ng: 59f7cc -&gt; 250220. Fixes
+          <ulink url="&lfs-qol-issues;/52">#52</ulink> and
+          <ulink url="&lfs-qol-issues;/60">#60</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 6th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - MelonDS: Added. Fixes
+          <ulink url="&lfs-qol-issues;/62">#62</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - mGBA: Added.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Dolphin: Added. Fixes
+          <ulink url="&lfs-qol-issues;/59">#59</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 5th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Add opengl entity.</para>
+        </listitem>
+        <listitem>
+          <para>[Toxikuu] - socat: Added. PR
+          <ulink url="&lfs-qol-pull;/64">(#64)</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 4th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - PrismLauncher: Added. Fixes
+          <ulink url="&lfs-qol-issues;/63">#63</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - glaze: 4.4.1 -&gt; 4.4.3;
+          hyprutils: 0.5.0 -&gt; 0.5.1. Fixes
+          <ulink url="&lfs-qol-issues;/53">#53</ulink> and
+          <ulink url="&lfs-qol-issues;/55">#55</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - game-emu/n64*: Added. PR
+          <ulink url="&lfs-qol-pull;/58">(#58)</ulink>. Fixes
+          <ulink url="&lfs-qol-issues;/57">#57</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[seal331] - cde/*: Added. PR
+          <ulink url="&lfs-qol-pull;/56">(#56)</ulink>. Fixes
+          <ulink url="&lfs-qol-issues;/54">#54</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Changelog: Cleaned for next release cycle.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+  </itemizedlist>
+
+</sect1>

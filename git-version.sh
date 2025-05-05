@@ -1,9 +1,9 @@
 #!/bin/sh
 
-if test $REV = "sysv"; then
+if test x"$REV" = x"sysv"; then
     SYSV="INCLUDE"
     SYSTEMD="IGNORE"
-elif test $REV = "systemd"; then
+elif test x"$REV" = x"systemd"; then
     SYSV="IGNORE"
     SYSTEMD="INCLUDE"
 else
@@ -12,10 +12,10 @@ else
     exit 1
 fi
 
-if test $STAB = "development"; then
+if test x"$STAB" = x"development"; then
     DEVELOPMENT="INCLUDE"
     RELEASE="IGNORE"
-elif test $STAB = "release"; then
+elif test x"$STAB" = x"release"; then
     DEVELOPMENT="IGNORE"
     RELEASE="INCLUDE"
 else
@@ -26,16 +26,16 @@ fi
 
 echo "<!ENTITY % sysv        \"$SYSV\">"        >  conditional.ent
 echo "<!ENTITY % systemd     \"$SYSTEMD\">"     >> conditional.ent
-echo "<!ENTITY % development \"$DEVELOPMENT\">" >>  conditional.ent
+echo "<!ENTITY % development \"$DEVELOPMENT\">" >> conditional.ent
 echo "<!ENTITY % release     \"$RELEASE\">"     >> conditional.ent
 
 if ! git status > /dev/null; then
     # Either it's not a git repository, or git is unavaliable.
     # Just workaround.
-    echo "<!ENTITY year              \"????\">"            >  version.ent
-    echo "<!ENTITY version           \"unknown\">"         >> version.ent
-    echo "<!ENTITY releasedate       \"unknown\">"         >> version.ent
-    echo "<!ENTITY pubdate           \"unknown\">"         >> version.ent
+    echo "<!ENTITY year              \"????\">"            >> conditional.ent
+    echo "<!ENTITY version           \"unknown\">"         >  version.ent
+    echo "<!ENTITY releasedate       \"unknown\">"         >> conditional.ent
+    echo "<!ENTITY pubdate           \"unknown\">"         >> conditional.ent
     exit 0
 fi
 
@@ -66,7 +66,7 @@ if [ "$(git diff HEAD | wc -l)" != "0" ]; then
     version="$version"
 fi
 
-echo "<!ENTITY year              \"$year\">"               >  version.ent
-echo "<!ENTITY version           \"$version\">"            >> conditional.ent
-echo "<!ENTITY releasedate       \"$full_date\">"          >> version.ent
-echo "<!ENTITY pubdate           \"$short_date\">"         >> version.ent
+echo "<!ENTITY year              \"$year\">"               >> conditional.ent
+echo "<!ENTITY version           \"$version\">"            >  version.ent
+echo "<!ENTITY releasedate       \"$full_date\">"          >> conditional.ent
+echo "<!ENTITY pubdate           \"$short_date\">"         >> conditional.ent

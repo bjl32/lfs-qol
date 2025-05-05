@@ -1,31 +1,98 @@
-<!-- 2. BINARY -->
-<!ENTITY fuse2-version                       "2.9.9">
-<!ENTITY ostree-version                      "2024.9">
-<!ENTITY flatpak-version                     "1.14.10">
-
-<!-- 3. HYPRLAND -->
-<!ENTITY hyprutils-version                   "0.2.6">
-<!ENTITY hyprlang-version                    "0.5.3">
-<!ENTITY tomlplusplus-version                "3.4.0">
-<!ENTITY libzip-version                      "1.11.2">
-<!ENTITY hyprcursor-version                  "0.1.10">
-<!ENTITY pugixml-version                     "1.14">
-<!ENTITY hyprwayland-scanner-version         "0.4.2">
-<!ENTITY aquamarine-version                  "0.5.0">
-<!ENTITY libliftoff-version                  "0.5.0">
-<!ENTITY hyprland-version                    "0.45.2">
-<!ENTITY sdbus-cpp-version                   "2.1.0">
-<!ENTITY xdg-desktop-portal-hyprland-version "1.3.8">
-
-<!-- 4. I3 -->
-<!ENTITY xcb-util-xrm-version                "1.3">
-<!ENTITY yajl-version                        "2.1.0">
+<!-- GENERAL -->
+<!-- General Libraries -->
+<!ENTITY asio-version                        "1-34-2">
+<!ENTITY enet-version                        "1.3.18">
+<!ENTITY glaze-version                       "5.1.0">
+<!ENTITY jansson-version                     "2.14.1">
 <!ENTITY libev-version                       "4.33">
-<!ENTITY i3-version                          "4.24">
+<!ENTITY libjuice-version                    "1.6.0">
+<!ENTITY libsrtp-version                     "2.7.0">
+<!ENTITY libdatachannel-version              "0.22.6">
+<!ENTITY libdatachannel-plog                 "94899e0b926ac1b0f4750bfbd495167b4a6ae9ef">
+<!ENTITY libdatachannel-usrsctp              "ebb18adac6501bad4501b1f6dccb67a1c85cc299">
+<!ENTITY libutempter-version                 "1.2.1">
+<!ENTITY libzip-version                      "1.11.3">
+<!ENTITY mbedtls-version                     "3.6.3">
+<!ENTITY zlib-version                        "1.3.1">
+<!ENTITY nlohmann-json-version               "3.12.0">
+<!ENTITY pugixml-version                     "1.15">
+<!ENTITY re2-version                         "2024-07-02">
+<!ENTITY qrcodegencpp-version                "1.8.0">
+<!ENTITY sdbus-cpp-version                   "2.1.0">
+<!ENTITY sdl2_net-version                    "2.2.0">
+<!ENTITY tllist-version                      "1.1.0">
+<!ENTITY tomlplusplus-version                "3.4.0">
+<!ENTITY uthash-version                      "2.3.0">
+<!ENTITY websocketpp-version                 "0.8.2">
+<!ENTITY yajl-version                        "2.1.0">
+<!-- Graphical Libraries -->
+<!ENTITY fcft-version                        "3.3.1">
+<!ENTITY glu-version                         "9.0.3">
+<!ENTITY libliftoff-version                  "0.5.0">
+<!ENTITY libspng-version                     "0.7.4">
+<!ENTITY nv-codec-headers-version            "13.0.19.0">
+<!ENTITY xdg-desktop-portal-hyprland-version "1.3.9">
+<!ENTITY xdg-desktop-portal-wlr-version      "0.7.1">
+<!-- General Utilities -->
+<!ENTITY htop-version                        "3.4.1">
+<!ENTITY btop-version                        "1.4.0">
+<!ENTITY jstest-sdl-minor-version            "710687">
+<!ENTITY jstest-sdl-version                  "710687344a8bd35553f0edf40469531c07b6ef31">
+<!ENTITY lotus123-version                    "1.0.0rc4">
+<!-- DO NOT KEEP THIS UP TO DATE. Do not sync this with LFS, do not sync
+this up with the latest version, ONLY sync this with upstream. We're
+dealing with decades-old proprietary software here, not even meant to work
+on Linux, whose port to Linux was only possible because of dlopen() not being
+a common thing on 90s UNIX and the software needing plugin support. I do NOT
+want to spend an entire day debugging this and single stepping stuff with gdb
+because there was a regression in binutils regarding i386 COFF, a format which
+barely anyone uses these days. This is a known-working upstream-recommended
+version, so keep this at that. -->
+<!ENTITY lotus123-binutils-version           "2.38">
+<!ENTITY lrzsz-version                       "0.12.20">
+<!ENTITY minicom-version                     "2.10">
+<!ENTITY gkermit-tarball-version             "gku201">
+<!ENTITY ncompress-version                   "5.0">
+<!ENTITY neofetch-version                    "7.1.0">
+<!ENTITY fastfetch-version                   "2.40.4">
+<!ENTITY obs-studio-version                  "31.0.3">
+<!ENTITY obs-cef-version                     "6533">
+<!ENTITY rpmextract-version                  "1.0">
+<!ENTITY scdoc-version                       "1.11.3">
+<!ENTITY tmux-version                        "3.5a">
+<!ENTITY wbg-version                         "1.2.0">
+<!-- System Utilities -->
+<!ENTITY eza-version                         "0.21.1">
+<!-- Programming -->
+<!ENTITY befunge-minor-version               "2_25">
+<!ENTITY befunge-version                     "2.25">
+<!ENTITY byacc-version                       "20241231">
+<!ENTITY cuda-version                        "12.8.1">
+<!ENTITY cuda-nvidia-version                 "570.124.06">
+<!ENTITY gcc-version                         "15.1.0">
+<!ENTITY gnat-binary-version                 "&gcc-version;-1">
+<!ENTITY intercal-version                    "0.33">
+<!ENTITY strace-version                      "6.14">
+<!ENTITY socat-version                       "1.8.0.3">
+<!ENTITY unlambda-version                    "2.0.0">
+<!-- JAVA -->
+<!ENTITY openjdk-major-version               "17">
+<!ENTITY openjdk-version                     "&openjdk-major-version;.0.15">
+<!ENTITY openjdk-build                       "5">
+<!-- Shells -->
+<!ENTITY ksh-version                         "1.0.10">
+<!-- Xorg Components -->
+<!ENTITY xcb-util-xrm-version                "1.3">
+<!ENTITY printproto-version                  "1.0.5">
+<!ENTITY libxp-version                       "1.0.4">
+<!ENTITY motif-version                       "2.3.8">
+<!-- Terminal Emulators -->
+<!ENTITY alacritty-version                   "0.15.1">
+<!ENTITY foot-version                        "1.22.0">
 
-<!-- 5. SVR4-TOOLS -->
-<!ENTITY heirloom-ng-minor-version           "59f7cc">
-<!ENTITY heirloom-ng-version                 "59f7cc870f72adc4a2df8a64acc75ab425d8ff6b">
+<!-- SVR4 -->
+<!-- SVR4-style Tools -->
+<!ENTITY heirloom-ng-version                 "250220">
 <!ENTITY schilytools-version                 "2024-03-21">
 <!ENTITY heirloom-sh-version                 "050706">
 <!ENTITY heirloom-doctools-minor-version     "2e9b0c">
@@ -37,7 +104,36 @@
 <!ENTITY heirloom-ex-vi-minor-version        "bd1f88">
 <!ENTITY heirloom-ex-vi-version              "bd1f886598d20d457885c5c189fea34b027cbdef">
 
-<!-- 6. EMULATORS -->
+<!-- BINARY SUPPORT -->
+<!-- Binary Support -->
+<!ENTITY fuse2-version                       "2.9.9">
+<!ENTITY ostree-version                      "2025.2">
+<!ENTITY flatpak-version                     "1.16.0">
+
+<!-- WM -->
+<!-- CDE -->
+<!ENTITY cde-de-version                      "2.5.2">
+<!-- Hypr -->
+<!ENTITY hyprland-protocols-version          "0.6.4">
+<!ENTITY hyprutils-version                   "0.6.0">
+<!ENTITY hyprlang-version                    "0.6.1">
+<!ENTITY hyprcursor-version                  "0.1.12">
+<!ENTITY hyprwayland-scanner-version         "0.4.4">
+<!ENTITY aquamarine-version                  "0.8.0">
+<!ENTITY hyprgraphics-version                "0.1.3">
+<!ENTITY hyprland-qt-support-version         "0.1.0">
+<!ENTITY hyprland-qtutils-version            "0.1.3">
+<!ENTITY hyprland-version                    "0.48.1">
+<!-- i3 -->
+<!ENTITY i3-version                          "4.24">
+<!-- Wayfire -->
+<!ENTITY wf-version                          "0.9.0">
+<!ENTITY wf-config-version                   "&wf-version;">
+<!ENTITY wayfire-version                     "&wf-version;">
+<!ENTITY wayfire-plugins-extra-version       "&wf-version;">
+
+<!-- EMULATORS -->
+<!-- Com-Emu -->
 <!ENTITY idle-minor-version                  "r26">
 <!ENTITY idle-version                        "e70cfd651ec84ec10f69b9d8ea8696978a6b5d11">
 <!ENTITY xhomer-version                      "2-19-24">
@@ -46,12 +142,47 @@
 <!ENTITY musashi-submodule-version           "fc7a6fc602e2fbcd24851670a5242358765feacf">
 <!ENTITY s4-3b1-pc7300-minor-version         "efe55b">
 <!ENTITY s4-3b1-pc7300-version               "efe55b8cc917e3e27bcae9786c5b5dec0469be45">
-<!ENTITY lrzsz-version                       "0.12.20">
-<!ENTITY minicom-version                     "2.9">
-<!ENTITY gkermit-tarball-version             "gku201">
 <!ENTITY gkermit-version                     "2.01">
 <!ENTITY p20-emu-minor-version               "d75a83">
 <!ENTITY p20-emu-version                     "d75a83ca9b107e1ae1a54598e4045c2843bd823e">
+<!-- Game-Emu -->
+<!-- NDS -->
+<!ENTITY melonds-version                     "1.0rc">
+<!-- GBA -->
+<!ENTITY mgba-minor-version                  "eeb52e">
+<!ENTITY mgba-version                        "eeb52e40274a8240fe066a16b93d9d46c4b677b9">
+<!-- GCN/Wii -->
+<!-- REQUIRED -->
+<!ENTITY dolphin-version                     "2503">
+<!ENTITY dolphin-qt-external                 "495517af2b922c10c24f543e0fd6ea3ddf774e50">
+<!ENTITY dolphin-sfml-external               "7f1162dfea4969bc17417563ac55d93b72e84c1e">
+<!ENTITY dolphin-vk-mem-alloc-external       "3bab6924988e5f19bf36586a496156cf72f70d9f">
+<!ENTITY dolphin-cubeb-external              "54217bca3f3e0cd53c073690a23dd25d83557909">
+<!ENTITY dolphin-sanitize-external           "aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a">
+<!ENTITY dolphin-hidapi-external             "7011fa98af2dde00c298105735e470de800288c7">
+<!ENTITY dolphin-implot-external             "18c72431f8265e2b0b5378a3a73d8a883b2175ff">
+<!ENTITY dolphin-mgba-external               "8739b22fbc90fdf0b4f6612ef9c0520f0ba44a51">
+<!ENTITY dolphin-minizip-ng-external         "55db144e03027b43263e5ebcb599bf0878ba58de">
+<!ENTITY dolphin-rcheevos-external           "d54cf8f1059cebc90a6f5ecdf03df69259f22054">
+<!ENTITY dolphin-spirv-cross-external        "ebe2aa0cd80f5eb5cd8a605da604cacf72205f3b">
+<!ENTITY dolphin-tinygltf-external           "c5641f2c22d117da7971504591a8f6a41ece488b">
+<!ENTITY dolphin-xxhash-external             "e626a72bc2321cd320e953a0ccf1584cad60f363">
+<!ENTITY dolphin-zlib-ng-external            "ce01b1e41da298334f8214389cc9369540a7560f">
+<!-- RECOMMENDED -->
+<!ENTITY dolphin-enet-external               "2a85cd64459f6ba038d233a634d9440490dbba12">
+<!ENTITY dolphin-fmt-external                "e69e5f977d458f2650bb346dadf2ad30c5320281">
+<!ENTITY dolphin-libspng-external            "dc5b1032c08efac68ad30170f7ccbf0aa8dd55c9">
+<!ENTITY dolphin-libusb-external             "ba698478afc3d3a72644eef9fc4cd24ce8383a4c">
+<!-- N64 -->
+<!ENTITY mupen64plus-version                 "2.6.0">
+<!ENTITY mupen64plus-core-version            "&mupen64plus-version;">
+<!ENTITY mupen64plus-input-sdl-version       "&mupen64plus-version;">
+<!ENTITY mupen64plus-audio-sdl-version       "&mupen64plus-version;">
+<!ENTITY mupen64plus-rsp-hle-version         "&mupen64plus-version;">
+<!ENTITY mupen64plus-video-rice-version      "&mupen64plus-version;">
+<!ENTITY mupen64plus-ui-console-version      "&mupen64plus-version;">
+<!ENTITY gliden64-version                    "865b1214bf72530b147e0f14e1e205e6897082ac">
 
-<!-- 7. DEV-TOOLS -->
-<!ENTITY strace-version                      "6.12">
+<!-- GEN-GAME-SOFT -->
+<!-- Minecraft -->
+<!ENTITY prism-launcher-version              "9.4">

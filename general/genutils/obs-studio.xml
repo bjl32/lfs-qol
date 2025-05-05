@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY obs-studio-download-http
+    "https://github.com/obsproject/obs-studio/releases/download/&obs-studio-version;/OBS-Studio-&obs-studio-version;-Sources.tar.gz">
+]>
+
+<sect1 id="obs-studio" xreflabel="OBS-Studio-&obs-studio-version;">
+  <?dbhtml filename="obs-studio.html"?>
+
+  <title>OBS-Studio-&obs-studio-version;</title>
+
+  <indexterm zone="obs-studio">
+    <primary sortas="a-obs-studio">OBS-Studio</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduction to OBS Studio</title>
+
+    <para>
+      <application>OBS Studio</application> is a screen recorder that can be
+      piped to various media containers and remote servers. It is geared
+      towards streaming but also has a very much supported general recording
+      usecase.
+    </para>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/long-build-time.xml"/>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Download (HTTP): <ulink url="&obs-studio-download-http;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Required patch:
+          <ulink url="&patch-root;/obs/obs-studio-&obs-studio-version;-allow_mesa.patch"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Recommended download:
+          <ulink url="https://cdn-fastly.obsproject.com/downloads/cef_binary_&obs-cef-version;_linux_x86_64.tar.xz"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">OBS Studio Dependencies</bridgehead>
+
+    <bridgehead renderas="sect4">Required</bridgehead>
+    <para role="required">
+      <ulink url="&blfs-svn;/multimedia/alsa-plugins.html">alsa-plugins</ulink>,
+      <ulink url="&blfs-svn;/general/cmake.html">CMake</ulink>,
+      <ulink url="&blfs-svn;/basicnet/curl.html">cURL</ulink>,
+      <ulink url="&blfs-svn;/multimedia/ffmpeg.html">FFmpeg</ulink>,
+      <ulink url="&blfs-svn;/general/freetype2.html">FreeType2</ulink>,
+      <ulink url="&blfs-svn;/general/fontconfig.html">Fontconfig</ulink>,
+      <ulink url="&blfs-svn;/general/glib2.html">GLib2</ulink> (with GObject
+      Introspection),
+      <xref linkend="jansson"/>,
+      <ulink url="&blfs-svn;/x/libdrm.html">libdrm</ulink>,
+      <ulink url="&blfs-svn;/multimedia/libva.html">libva</ulink>,
+      <ulink url="&blfs-svn;/general/libxkbcommon.html">libxkbcommon</ulink>,
+      <xref linkend="mbedtls"/>,
+      &opengl;,
+      <ulink url="&blfs-svn;/general/pciutils.html">pciutils</ulink>,
+      <ulink url="&blfs-svn;/x/qt6.html">Qt-6</ulink>,
+      <xref linkend="uthash"/>,
+      <ulink url="&blfs-svn;/x/vulkan-loader.html">Vulkan-Loader</ulink>,
+      <ulink url="&blfs-svn;/x/x7lib.html">Xorg Libraries</ulink>, and
+      <ulink url="&blfs-svn;/multimedia/x264.html">x264</ulink>
+    </para>
+
+    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <para role="recommended">
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            <xref linkend="asio"/>,
+            <xref linkend="qrcodegencpp"/>, and
+            <xref linkend="websocketpp"/>
+            (required for WebSocket support)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <ulink url="&blfs-svn;/x/at-spi2-core.html">at-spi2-core</ulink>
+            and <ulink url="&blfs-svn;/pst/cups.html">Cups</ulink>
+            (required for browser support)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <xref linkend="cuda"/> and <xref linkend="nv-codec-headers"/>
+            (required for NVIDIA hardware encoding)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <ulink url="&blfs-svn;/multimedia/fdk-aac.html">fdk-aac</ulink>
+            (required for FDK AAC codec support)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <ulink url="&blfs-svn;/multimedia/intel-vaapi-driver.html">intel-vaapi-driver</ulink>
+            and
+            <ulink url="&blfs-svn;/x/mesa.html">Mesa</ulink>
+            (required for Intel QSV11 hardware encoding)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <xref linkend="libdatachannel"/>
+            (required for WebRTC support)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <ulink url="&blfs-svn;/multimedia/pipewire.html">Pipewire</ulink>
+            and
+            <ulink url="&blfs-svn;/x/xdg-desktop-portal.html">xdg-desktop-portal</ulink>
+            (required for Pipewire camera support and screencasting)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <ulink url="&blfs-svn;/multimedia/pulseaudio.html">PulseAudio</ulink>
+            (required for PulseAudio audio sources)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <ulink url="&blfs-svn;/multimedia/speex.html">Speex</ulink>
+            (required for SpeexDSP noise suppression)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <ulink url="&blfs-svn;/general/swig.html">SWIG</ulink> and
+            <ulink url="&blfs-svn;/general/luajit.html">luajit</ulink>
+            (required for scripting support)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <ulink url="&blfs-svn;/multimedia/v4l-utils.html">v4l-utils</ulink>
+            (required for V4L support)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <ulink url="&blfs-svn;/multimedia/vlc.html">VLC</ulink>
+            (required for VLC support)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <ulink url="&blfs-svn;/general/wayland.html">Wayland</ulink>
+            (required for recording on Wayland)
+          </para>
+        </listitem>
+      </itemizedlist>
+    </para>
+
+    <note><para>
+      The options to disable the functionality enabled by the dependencies
+      above are in the Command Explanations.
+    </para></note>
+
+    <bridgehead renderas="sect4">Optional</bridgehead>
+    <para role="optional">
+      <ulink url="https://github.com/jackaudio/jack2">Jack2</ulink>,
+      <ulink url="https://github.com/aja-video/libajantv2">libajantv2</ulink>,
+      <ulink url="&arch-pkgs;/extra/x86_64/librist/">librist</ulink>,
+      <ulink url="https://github.com/xiph/rnnoise">librnnoise</ulink>
+      (if not installed, an internal copy will be used), and
+      <ulink url="&arch-pkgs;/extra/x86_64/sndio/">sndio</ulink>
+    </para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of OBS Studio</title>
+
+    <para>
+      Fix building with GCC-15.x.x:
+    </para>
+
+<screen><userinput>sed '/^#include &lt;cmath&gt;/a #include &lt;cstdint&gt;' \
+  -i deps/json11/json11.cpp</userinput></screen>
+
+    <para>
+      Apply a patch to allow EGL libraries from
+      <application>Mesa</application>:
+    </para>
+
+<screen><userinput>patch -Np1 -i ../obs-studio-&obs-studio-version;-allow_mesa.patch</userinput></screen>
+
+    <para>
+      If you want to enable browser support, ensure you have downloaded the
+      recommended download, then unpack it:
+    </para>
+
+<screen><userinput>tar -xf ../cef_binary_&obs-cef-version;_linux_x86_64.tar.xz &amp;&amp;
+mv cef_binary_&obs-cef-version;_linux_x86_64 cef-&obs-cef-version;</userinput></screen>
+
+    <para>
+      Install <application>OBS Studio</application> by running the following
+      commands:
+    </para>
+
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+cmake -D CMAKE_INSTALL_PREFIX=/usr             \
+      -D CMAKE_BUILD_TYPE=Release              \
+      -D CMAKE_SKIP_INSTALL_RPATH=ON           \
+      -D ENABLE_BROWSER=ON                     \
+      -D CEF_ROOT_DIR=../cef-&obs-cef-version;              \
+      -D ENABLE_AJA=OFF                        \
+      -D ENABLE_JACK=OFF                       \
+      -D ENABLE_NEW_MPEGTS_OUTPUT=OFF          \
+      -D OBS_COMPILE_DEPRECATION_AS_WARNING=ON \
+      -G Ninja -Wno-dev .. &amp;&amp;
+
+ninja</userinput></screen>
+
+    <para>
+      Now, as the &root; user:
+    </para>
+
+<screen role="root"><userinput>ninja install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/cmake-skip-install-rpath.xml"/>
+
+    <para>
+      <parameter>-D ENABLE_BROWSER=ON</parameter>: This switch enables browser
+      support.
+    </para>
+
+    <para>
+      <parameter>-D CEF_ROOT_DIR=../cef-&obs-cef-version;</parameter>: This
+      switch tells the build system where the CEF binaries are located.
+    </para>
+
+    <para>
+      <parameter>-D ENABLE_AJA=OFF</parameter>: This switch disables the
+      optional Aja functionality.
+    </para>
+
+    <para>
+      <parameter>-D ENABLE_JACK=OFF</parameter>: This switch disables the
+      optional Jack2 functionality.
+    </para>
+
+    <para>
+      <parameter>-D ENABLE_NEW_MPEGTS_OUTPUT=OFF</parameter>: This switch
+      disables the optional MpegTS Output functionality.
+    </para>
+
+    <para>
+      <option>-D ENABLE_PIPEWIRE=OFF</option>: Disables Pipewire support if you
+      have not installed it.
+    </para>
+
+    <para>
+      <option>-D ENABLE_SPEEXDSP=OFF</option>: Disables Speex support if you
+      have not installed it.
+    </para>
+
+    <para>
+      <option>-D ENABLE_WEBRTC=OFF</option>: Disables WebRTC support if you
+      have not installed the recommended dependencies.
+    </para>
+
+    <para>
+      <option>-D ENABLE_WEBSOCKET=OFF</option>: Disables WebSocket support if
+      you have not installed the recommended dependencies.
+    </para>
+
+    <para>
+      <option>-D ENABLE_V4L2=OFF</option>: Disables V4L2 support if you have
+      not installed the recommended dependencies.
+    </para>
+
+    <para>
+      <option>-D ENABLE_VLC=OFF</option>: Disables VLC support if you have not
+      installed the recommended dependencies.
+    </para>
+
+    <para>
+      <option>-D ENABLE_NVENC=OFF -D ENABLE_NVENC_FFMPEG_IDS=OFF</option>:
+      These options disable NVIDIA hardware encoding support if you have not
+      installed the recommended dependencies.
+    </para>
+
+    <para>
+      <option>-D ENABLE_QSV11=OFF</option>: Disables Intel QSV11 hardware
+      encoding support if you have not installed the recommended dependencies.
+    </para>
+
+    <para>
+      <option>-D ENABLE_SCRIPTING=OFF</option>: Disables scripting support if
+      you have not installed the recommended dependencies.
+    </para>
+
+    <para>
+      <parameter>-D OBS_COMPILE_DEPRECATION_AS_WARNING=ON</parameter>: This
+      ensures there are no build failures due to deprecated features in the
+      FFmpeg side being used.
+    </para>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Contents</title>
+
+    <segmentedlist>
+      <segtitle>Installed Programs</segtitle>
+      <segtitle>Installed Libraries</segtitle>
+      <segtitle>Installed Directories</segtitle>
+
+      <seglistitem>
+        <seg>
+          obs and obs-ffmpeg-mux
+        </seg>
+        <seg>
+          libobs-frontend-api,
+          libobs-opengl,
+          libobs-scripting,
+          libobs, and many plugins in /usr/lib/obs-plugins
+        </seg>
+        <seg>
+          /usr/include/obs,
+          /usr/lib/cmake/{libobs,obs-frontend-api,obs-websocket-api},
+          /usr/lib/obs-plugins,
+          /usr/lib/obs-scripting, and
+          /usr/share/obs
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="obs">
+        <term><command>obs</command></term>
+        <listitem>
+          <para>
+            is the <application>OBS Studio</application> program
+          </para>
+          <indexterm zone="obs-studio obs">
+            <primary sortas="b-obs">obs</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="obs-ffmpeg-mux">
+        <term><command>obs-ffmpeg-mux</command></term>
+        <listitem>
+          <para>
+            is the <application>FFmpeg</application> multiplexer that
+            <command>obs</command> uses
+          </para>
+          <indexterm zone="obs-studio obs-ffmpeg-mux">
+            <primary sortas="b-obs-ffmpeg-mux">obs-ffmpeg-mux</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libobs-frontend-api">
+        <term><filename class="libraryfile">libobs-frontend-api</filename></term>
+        <listitem>
+          <para>
+            contains API functions for the <application>OBS
+            Studio</application> frontend
+          </para>
+          <indexterm zone="obs-studio libobs-frontend-api">
+            <primary sortas="c-libobs-frontend-api">libobs-frontend-api</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libobs-opengl">
+        <term><filename class="libraryfile">libobs-opengl</filename></term>
+        <listitem>
+          <para>
+            provided OpenGL rendering functions for <application>OBS
+            Studio</application>
+          </para>
+          <indexterm zone="obs-studio libobs-opengl">
+            <primary sortas="c-libobs-opengl">libobs-opengl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libobs-scripting">
+        <term><filename class="libraryfile">libobs-scripting</filename></term>
+        <listitem>
+          <para>
+            provides functions for <application>OBS
+            Studio</application> scripts
+          </para>
+          <indexterm zone="obs-studio libobs-scripting">
+            <primary sortas="c-libobs-scripting">libobs-scripting</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libobs">
+        <term><filename class="libraryfile">libobs</filename></term>
+        <listitem>
+          <para>
+            contains all the functions used by <application>OBS
+            Studio</application> and its plugins
+          </para>
+          <indexterm zone="obs-studio libobs">
+            <primary sortas="c-libobs">libobs</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>
